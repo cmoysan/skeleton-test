@@ -1,0 +1,5 @@
+Gesco\Si\Component\MajoraNamespace\Entity\MajoraEntity:
+    properties: ~
+        #example:
+        #    - NotBlank:
+        #        groups: [creation]

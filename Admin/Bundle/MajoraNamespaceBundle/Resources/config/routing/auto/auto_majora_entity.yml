@@ -1,0 +1,46 @@
+# @MajoraGenerator({"force_generation": true})
+
+gesco_admin_majora_entity_list:
+    path: /
+    defaults:
+        _controller: GescoAdminMajoraNamespaceBundle:MajoraEntityAdmin:list
+
+gesco_admin_majora_entity_create:
+    path: /create
+    defaults:
+        _controller: GescoAdminMajoraNamespaceBundle:MajoraEntityAdmin:create
+
+gesco_admin_majora_entity_details:
+    path: /{id}/details
+    defaults:
+        _controller: GescoAdminMajoraNamespaceBundle:MajoraEntityAdmin:details
+    requirements:
+        id: \d+
+
+gesco_admin_majora_entity_update:
+    path: /{id}/update
+    defaults:
+        _controller: GescoAdminMajoraNamespaceBundle:MajoraEntityAdmin:update
+    requirements:
+        id: \d+
+
+gesco_admin_majora_entity_delete:
+    path: /{id}/delete
+    defaults:
+        _controller: GescoAdminMajoraNamespaceBundle:MajoraEntityAdmin:delete
+    requirements:
+        id: \d+
+
+gesco_admin_majora_entity_enable:
+    path: /{id}/enable
+    defaults:
+        _controller: GescoAdminMajoraNamespaceBundle:MajoraEntityAdmin:enable
+    requirements:
+        id: \d+
+
+gesco_admin_majora_entity_disable:
+    path: /{id}/disable
+    defaults:
+        _controller: GescoAdminMajoraNamespaceBundle:MajoraEntityAdmin:disable
+    requirements:
+        id: \d+

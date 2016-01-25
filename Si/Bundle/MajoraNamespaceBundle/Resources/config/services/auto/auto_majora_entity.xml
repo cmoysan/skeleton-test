@@ -1,0 +1,54 @@
+<?xml version="1.0" ?>
+
+<!-- @MajoraGenerator({"force_generation": true}) -->
+
+<container xmlns="http://symfony.com/schema/dic/services"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+
+        <!-- MajoraEntity Domain -->
+        <service id="gesco.majora_entity.domain"
+            class="Gesco\Si\Component\MajoraNamespace\Domain\MajoraEntityDomain"
+            parent="majora.domain.abstract"
+            public="true"
+        >
+            <argument type="service" id="gesco.majora_entity.repository" />
+        </service>
+
+        <!-- MajoraEntity Loader -->
+        <service id="gesco.majora_entity.loader"
+            class="Gesco\Si\Component\MajoraNamespace\Loader\Doctrine\MajoraEntityDoctrineLoader"
+            parent="majora.loader.abstract"
+            public="true" lazy="true"
+        >
+            <tag name="majora.loader"
+                repository="gesco.majora_entity.repository"
+                entityClass="Gesco\Si\Component\MajoraNamespace\Entity\MajoraEntity"
+                entityCollection="Gesco\Si\Component\MajoraNamespace\Entity\MajoraEntityCollection"
+            />
+        </service>
+
+        <!-- MajoraEntity Repository -->
+        <service id="gesco.majora_entity.repository"
+            class="Gesco\Si\Component\MajoraNamespace\Repository\Doctrine\MajoraEntityDoctrineRepository"
+            parent="majora.doctrine_repository.abstract"
+            public="false"
+        >
+            <factory service="doctrine" method="getRepository" />
+            <argument>GescoSiMajoraNamespace:MajoraEntity</argument>
+            <argument>default</argument>
+        </service>
+
+        <!-- MajoraEntity Form Type -->
+        <service id="gesco.majora_entity.form_type"
+            class="Gesco\Si\Bundle\MajoraNamespaceBundle\Form\Type\MajoraEntityType"
+            public="true"
+        >
+            <tag name="form.type" alias="majora_entity" />
+        </service>
+
+    </services>
+
+</container>

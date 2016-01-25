@@ -1,0 +1,18 @@
+{# @MajoraGenerator({"force_generation": true}) #}
+{% extends 'GescoAdminMajoraNamespaceBundle::layout.html.twig' %}
+
+{% block majora_entity_icon '' %}
+
+{% block majora_entity_title '' %}
+
+{% block majora_entity_label majoraEntity is defined ? majoraEntity.id : '' %}
+
+{% block inactive_breadcrumbs %}
+    {{ parent() }}
+    <li>
+        <a href="{{ url('gesco_admin_majora_entity_list') }}">
+        <span>{{ block('majora_entity_title') }}</span>
+        {{ 'admin.majora_entity.breadcrumb.base'|trans }}
+        </a>
+    </li>
+{% endblock %}

@@ -1,0 +1,8 @@
+# @MajoraGenerator({"include_routing": {"target": "../routing.yml"}})
+# @MajoraGenerator({"include_routing": {"route": "gesco_admin_majora_entity"}})
+# @MajoraGenerator({"include_routing": {"resource": "routing/majora_entity.yml"}})
+# @MajoraGenerator({"include_routing": {"prefix": "/majora_entitys"}})
+
+# generated routes
+auto_gesco_admin_majora_entity:
+    resource: "@GescoAdminMajoraNamespaceBundle/Resources/config/routing/auto/auto_majora_entity.yml"
